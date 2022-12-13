@@ -4,6 +4,7 @@
     box-sizing: border-box;
     background-color: white;
     font-family: sans-serif;
+    user-select: none;
 }
 h1{
     text-align: center;
