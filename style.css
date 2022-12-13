@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: sans-serif;
+    color: darkorange;
+}
+.game{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.board{
+    margin-top: 200px;
+}
+.items{
+    border: 2px orange;
+    background-color: orange;
+    width: 200px;
+    height: 500px;
+}
