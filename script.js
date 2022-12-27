@@ -23,7 +23,18 @@ let winningcombinations = [
 let flagforDraw = 0;
 
 refreshbutton.addEventListener("click", () => {
-  location.reload();
+    Afterwin.classList.remove("show");
+    box.forEach((e)=>{
+        e.innerText = "";
+        e.removeEventListener("click", handleClick);
+    });
+    turn=true;
+    flagforDraw=0;
+    box.forEach((e) => {
+        e.addEventListener("click", handleClick, { once: true });
+      });
+      
+
 });
 
 box.forEach((e) => {
@@ -37,12 +48,15 @@ function handleClick(e) {
 
   if (checkWinner() && notation == "X") {
     windata.innerText = "Player 1 Wins!";
+    score1.innerText=parseInt(score1.innerText)+1;;
     Afterwin.classList.add("show");
   } else if (checkWinner() && notation == "O") {
     windata.innerText = "Player 2 wins!";
+    score2.innerText=parseInt(score2.innerText)+1;;
     Afterwin.classList.add("show");
   } else if (flagforDraw == 18) {
     windata.innerText = "Draw!";
+    TieScore.innerText=parseInt(TieScore.innerText)+1;
     Afterwin.classList.add("show");
   }
 
